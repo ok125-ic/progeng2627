@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <vector>
+
+int main (){
+    std::ifstream infile;
+    infile.open("input.txt");
+
+    std::vector<int> v;
+
+    if (!infile.is_open()){
+        std::cout << "Could not open file." << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    int tmp;
+    while(infile >> tmp){
+        v.push_back(tmp);
+    }
+    infile.close();
+    for (int i = v.size(); i > 0; i--)
+    {
+        std::cout << v[i-1] << std::endl;
+    }
+}
